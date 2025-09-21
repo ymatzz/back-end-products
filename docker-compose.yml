@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  # Nome do serviço da sua aplicação
+  back-end-producsts-app:
+    # Constrói a imagem a partir do Dockerfile no diretório atual (.)
+    build: .
+    # Define um nome amigável para o contêiner
+    container_name: back-end-producsts-app
+
+    ports:
+      - "25000:8080"
+
+    environment:
+      - SERVER_PORT=8080
