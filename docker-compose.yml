@@ -2,16 +2,32 @@ version: '3.9'
 
 services:
   # Nome do serviço da sua aplicação
-  back-end-producsts-app:
+  back-end-products-app:
     # Constrói a imagem a partir do Dockerfile no diretório atual (.)
     build: .
     # Define um nome amigável para o contêiner
-    container_name: back-end-producsts-app
+    container_name: products-app
     restart: unless-stopped
 
     ports:
-      - "25000:8080"
+      - "8080:8080"
 
     environment:
-
       - SERVER_PORT=8080
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database-projeto.cl4skiqiqakc.us-east-1.rds.amazonaws.com:5432/devops
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - spring.datasource.driver-class-name=org.postgresql.Driver
+      - spring.datasource.initialization-mode=always
+      - spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+      - spring.jpa.show-sql=true
+      - spring.jpa.hibernate.ddl-auto=update
+      - spring.datasource.hikari.maximum-pool-size=10
+      - spring.datasource.hikari.minimum-idle=2
+      - spring.datasource.hikari.idle-timeout=30000
+      - spring.datasource.hikari.max-lifetime=1800000
+      - spring.datasource.hikari.connection-timeout=20000
+      - spring.datasource.hikari.leak-detection-threshold=2000
+      - spring.jpa.properties.hibernate.statement_cache.size=0
+    env_file:
+      - .env
