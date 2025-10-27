@@ -14,9 +14,9 @@ services:
 
     environment:
       - SERVER_PORT=8080
-      - spring.datasource.url=jdbc:postgresql://database-projeto.cl4skiqiqakc.us-east-1.rds.amazonaws.com:5432/devops
-      - spring.datasource.username=postgres
-      - spring.datasource.password=j8d>kD?tP.hb#XB:3a:VjzQ5$A>O
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database-projeto.cl4skiqiqakc.us-east-1.rds.amazonaws.com:5432/products
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
       - spring.datasource.driver-class-name=org.postgresql.Driver
       - spring.datasource.initialization-mode=always
       - spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
