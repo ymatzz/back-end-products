@@ -5,7 +5,8 @@
 **Grupo**:
 
 1. 10420319 - Jean Pazzini Domingues - Documentação + Lambda
-2. 10420439 - Matheus Fernandes dos Santos - VPC + RDS + Back-End + API Gateway + Video
+2. 10420439 - Matheus Fernandes dos Santos - RDS + Back-End + Video
+3. 10428223 - Guilherme Miranda Bertinato da Rocha - VPC + API Gateway
 
 ## 1. Visão geral
 O projeto consiste na implementação de um sistema de back-end para o gerenciamento de produtos. 
